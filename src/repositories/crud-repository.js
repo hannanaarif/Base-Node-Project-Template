@@ -7,17 +7,8 @@ class crudRepository{
         this.model=model;
     }
     async create(data){
-        try {
-           console.log('Attempting to create: crud-repo'); // Log data being sent to the database
            const response=await this.model.create(data);
-           return response;  
-        } catch (error) {
-          //  Logger.error('something went wrong with crud repo:create');
-          Logger.error('Something went wrong with crud repo:create', { error: error.message, stack: error.stack });
-
-            throw error;
-        }
-        
+           return response;
     }
 
 
